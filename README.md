@@ -26,6 +26,7 @@ The software is released under the terms of the BSD license as specified in the 
 	* $sudo apt-get install libwxgtk3.0-gtk3-dev
 	* $sudo apt-get install libreadline-dev
 	* $sudo apt install libwxgtk-webview3.0-gtk3-dev
+ 
 6 - Correct in Makefile the WXVERSION for the version you installed.
     VERSION?=$(shell git describe --tags --dirty)
     WXVERSION=3.3
