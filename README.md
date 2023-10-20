@@ -14,9 +14,9 @@ The software is released under the terms of the BSD license as specified in the 
   * $make
     
 3 - Excute these commands
-	* $cd include/
-	* $sudo cp -Rf wx /usr/include/.
-	* $sudo cp /usr/local/lib/wx/include/gtk3-unicode-3.3/wx/setup.h /usr/include/wx/.
+  * $cd include/
+  * $sudo cp -Rf wx /usr/include/.
+  * $sudo cp /usr/local/lib/wx/include/gtk3-unicode-3.3/wx/setup.h /usr/include/wx/.
  
 4 - export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/lib
 
