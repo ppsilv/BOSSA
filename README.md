@@ -8,9 +8,11 @@ The software is released under the terms of the BSD license as specified in the 
 
 
 1 - git clone  --recurse-submodules https://github.com/wxWidgets/wxWidgets.git
+
 2 - sudo apt-get install libgtk-3-dev build-essential checkinstall
   * $./configure
   * $make
+    
 3 - Excute these commands
 	* $cd include/
 	* $sudo cp -Rf wx /usr/include/.
