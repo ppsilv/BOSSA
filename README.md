@@ -13,6 +13,7 @@ The software is released under the terms of the BSD license as specified in the 
 ## The purpose of this fork is to compile bossa on an orange pi 5 plus with linux ubunto 22.04 on the arm aarch64 GNU/Linux architecture
 
 1 - git clone  --recurse-submodules https://github.com/wxWidgets/wxWidgets.git
+
 2 - sudo apt-get install libgtk-3-dev build-essential checkinstall
   * $./configure
   * $make
