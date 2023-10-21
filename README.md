@@ -1,4 +1,4 @@
-BOSSA 1.9.1
+# BOSSA 1.9.1
 -----------
 
 BOSSA is a flash programming utility for Atmel's SAM family of flash-based ARM microcontrollers.
@@ -9,6 +9,37 @@ The software was created by Scott Shumate with contributions from several
 [contributors](https://github.com/shumatech/BOSSA/graphs/contributors).
 
 The software is released under the terms of the BSD license as specified in the LICENSE file.
+
+## The purpose of this fork is to compile bossa on an orange pi 5 plus with linux ubunto 22.04 on the arm aarch64 GNU/Linux architecture
+
+1 - git clone  --recurse-submodules https://github.com/wxWidgets/wxWidgets.git
+2 - sudo apt-get install libgtk-3-dev build-essential checkinstall
+  * $./configure
+  * $make
+3 - Excute these commands
+	* $cd include/
+	* $sudo cp -Rf wx /usr/include/.
+	* $sudo cp /usr/local/lib/wx/include/gtk3-unicode-3.3/wx/setup.h /usr/include/wx/.
+ 
+4 - export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/lib
+
+5 - Excute these commands
+	* $sudo apt-get install build-essential
+	* $sudo apt-get install libwxbase3.0-dev
+	* $sudo apt-get install libwxgtk3.0-gtk3-dev
+	* $sudo apt-get install libreadline-dev
+	* $sudo apt install libwxgtk-webview3.0-gtk3-dev
+6 - Correct in Makefile the WXVERSION for the version you installed.
+    VERSION?=$(shell git describe --tags --dirty)
+    WXVERSION=3.3
+
+7 - sudo update-alternatives --config wx-config 
+    Select: * 0            /usr/lib/aarch64-linux-gnu/wx/config/gtk3-unicode-3.0   309       auto mode	
+	
+8 - make bossac or make -j
+
+9 - The program will appear in ./bin
+
 
 Supported Device Families
 -------------------------
@@ -38,10 +69,3 @@ Supported Device Families
  * SAMV71\*
 
 \* Device families which are not tested for each release and could stop working.
-
-Do you want to help make sure a device family is tested or do you want to see a new device family added?  Then contribute a development board with a device from that family to the BOSSA project to make it happen.  Contact scott at shumatech.com if you are interested in helping the project.
-
-The following individuals and companies graciously provided development boards to assist the BOSSA project.
- * Atmel Corporation (SAM3N, SAM3S, SAM3U)
- * David Crocker (SAM4E, SAM4S)
- * Adafruit Industries (SAMD21, SAMD51)
